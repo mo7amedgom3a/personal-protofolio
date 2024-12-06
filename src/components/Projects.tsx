@@ -33,14 +33,20 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-primary rounded-lg overflow-hidden shadow-lg hover:transform hover:scale-105 transition-transform duration-300"
+              className="group bg-primary rounded-lg overflow-hidden shadow-lg transform-gpu transition-all duration-300 hover:scale-105 hover:-rotate-2 perspective-1000"
+              style={{
+                transformStyle: 'preserve-3d',
+              }}
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
+              <div className="relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover transform transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              <div className="p-6 transform transition-transform duration-300 group-hover:translate-z-10">
                 <h3 className="text-xl font-semibold text-white mb-2">
                   {project.title}
                 </h3>
@@ -49,7 +55,7 @@ const Projects = () => {
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="bg-secondary text-primary px-3 py-1 rounded-full text-sm"
+                      className="bg-secondary text-primary px-3 py-1 rounded-full text-sm transform transition-transform duration-300 hover:scale-105"
                     >
                       {tech}
                     </span>
@@ -57,7 +63,7 @@ const Projects = () => {
                 </div>
                 <a
                   href={project.link}
-                  className="text-secondary hover:text-accent transition-colors"
+                  className="inline-block text-secondary hover:text-accent transition-colors transform transition-transform duration-300 group-hover:translate-x-2"
                 >
                   View Project →
                 </a>
