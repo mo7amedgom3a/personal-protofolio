@@ -1,14 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, Moon, Sun } from "lucide-react";
+import { Github, Linkedin, LucideFacebook } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMedium } from "@fortawesome/free-brands-svg-icons";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    document.documentElement.classList.toggle("dark");
-  };
 
   const navItems = [
     { name: "About", href: "#about" },
@@ -16,15 +13,41 @@ const Header = () => {
     { name: "Skills", href: "#skills" },
     { name: "Contact", href: "#contact" },
   ];
+  const socialItems = [
+    {
+      href: "https://github.com/mo7amedgom3a",
+      icon: <Github className="text-white hover:text-secondary transition-colors" size={24} />,
+    },
+    {
+      href: "https://www.linkedin.com/in/mohamed-gomaa-626a18249",
+      icon: <Linkedin className="text-white hover:text-secondary transition-colors" size={24} />,
+    },
+    {
+      href: "https://www.facebook.com/profile.php?id=100011375729397",
+      icon: <LucideFacebook className="text-white hover:text-secondary transition-colors" size={24} />,
+    },
+    {
+      href: "https://medium.com/@mo7amed.gom3a.7moda",
+      icon: <FontAwesomeIcon icon={faMedium} className="text-white hover:text-secondary transition-colors" size="lg" />,
+    },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-primary z-50">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a href="#" className="text-xl font-bold text-white">
-            Your Name
-          </a>
-
+          <div className="flex items-center space-x-4">
+            <a href="#" className="text-xl font-bold text-white">
+              Mohamed Gomaa
+            </a>
+            <div className="flex items-center space-x-4">
+              {socialItems.map((item) => (
+                <a key={item.href} href={item.href}>
+                  {item.icon}
+                </a>
+              ))}
+            </div>
+          </div>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
@@ -36,32 +59,8 @@ const Header = () => {
                 {item.name}
               </a>
             ))}
-            <button
-              onClick={toggleDarkMode}
-              className="p-3 rounded-full bg-secondary shadow-lg hover:bg-secondary/80 transition-all duration-300 transform hover:scale-110"
-              aria-label="Toggle dark mode"
-            >
-              {isDarkMode ? (
-                <Sun className="w-6 h-6 text-primary" />
-              ) : (
-                <Moon className="w-6 h-6 text-primary" />
-              )}
-            </button>
           </div>
-
-          {/* Mobile Navigation Button */}
           <div className="md:hidden flex items-center space-x-4">
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full bg-secondary shadow-lg hover:bg-secondary/80 transition-all duration-300"
-              aria-label="Toggle dark mode"
-            >
-              {isDarkMode ? (
-                <Sun className="w-5 h-5 text-primary" />
-              ) : (
-                <Moon className="w-5 h-5 text-primary" />
-              )}
-            </button>
             <button
               className="text-white"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -74,6 +73,11 @@ const Header = () => {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <div className="md:hidden py-4">
+            {socialItems.map((item) => (
+              <a key={item.href} href={item.href}>
+                {item.icon}
+              </a>
+            ))}
             {navItems.map((item) => (
               <a
                 key={item.name}
