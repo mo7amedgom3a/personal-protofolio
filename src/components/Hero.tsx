@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section id="about" className="pt-24 pb-16 bg-primary">
+    <section id="about" className="pt-24 pb-16 bg-primary/80 backdrop-blur-sm">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 animate-fade-in">
@@ -20,11 +20,14 @@ const Hero = () => {
             </a>
           </div>
           <div className="flex-1 animate-slide-in">
-            <img
-              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
-              alt="Profile"
-              className="rounded-lg shadow-xl max-w-md mx-auto"
-            />
+            <div className="relative w-64 h-64 mx-auto md:w-80 md:h-80">
+              <img
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+                alt="Profile"
+                className="rounded-full w-full h-full object-cover border-4 border-secondary shadow-xl"
+              />
+              <div className="absolute inset-0 rounded-full bg-secondary/20 animate-pulse"></div>
+            </div>
           </div>
         </div>
       </div>
