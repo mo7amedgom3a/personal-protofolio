@@ -1,5 +1,4 @@
-import { Mail, Github, Linkedin, Twitter } from "lucide-react";
-
+import { Mail, Github, Linkedin } from "lucide-react";
 const Contact = () => {
   return (
     <section id="contact" className="py-16 bg-card">
@@ -15,30 +14,24 @@ const Contact = () => {
             </p>
             <div className="flex flex-col space-y-4">
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:mo7amed.gom3a.7moda@gmail.com"
                 className="flex items-center justify-center space-x-3 bg-secondary text-primary px-6 py-3 rounded-lg hover:bg-accent transition-colors"
               >
                 <Mail size={20} />
-                <span>your.email@example.com</span>
+                <span>mo7amed.gom3a.7moda@gmail.com</span>
               </a>
               <div className="flex justify-center space-x-6">
                 <a
-                  href="#"
+                  href="https://github.com/mo7amedgom3a"
                   className="text-white hover:text-secondary transition-colors"
                 >
                   <Github size={24} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/mohamed-gomaa-626a18249"
                   className="text-white hover:text-secondary transition-colors"
                 >
                   <Linkedin size={24} />
-                </a>
-                <a
-                  href="#"
-                  className="text-white hover:text-secondary transition-colors"
-                >
-                  <Twitter size={24} />
                 </a>
               </div>
             </div>

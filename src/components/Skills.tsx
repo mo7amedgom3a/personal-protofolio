@@ -1,19 +1,68 @@
+import { icons } from "lucide-react";
+
 const skills = [
   {
-    category: "Backend",
-    items: ["Java", "Python", "Node.js", "C#"],
+    category: "Backend & Frontend",
+    items: [
+      { name: ".NET", icon: "../Technology/NET.svg" },
+      { name: "Python", icon: "../Technology/Python.svg" },
+      { name: "Node.js", icon: "../Technology/Node.js.svg" },
+      { name: "C#", icon: "../Technology/C.svg" },
+      { name: "Express.js", icon: "../Technology/Express.svg" },
+      { name: "Flask", icon: "../Technology/Flask.svg" },
+      { name: "Django", icon: "../Technology/Django.svg"},
+      { name: "Nginx", icon: "../Technology/NGINX.svg" },
+      { name: "HAProxy", icon: "../Technology/HAproxy.svg" },
+      { name: "GraphQL", icon: "../Technology/GraphQL.svg" },
+      { name: "React", icon: "../Technology/React.svg" },
+      { name: "Next.js", icon: "../Technology/Next.js.svg" },
+    ],
   },
   {
     category: "Databases",
-    items: ["PostgreSQL", "MongoDB", "Redis", "MySQL"],
+    items: [
+      { name: "MySql", icon: "../Technology/MySQL.svg" },
+      { name: "Microsoft SQL Server", icon: "../Technology/SQL.svg" },
+      { name: "SQLite", icon: "../Technology/SQLite.svg" },
+      { name: "Sqlalchemy", icon: "../Technology/SQLAlchemy.svg" },
+      { name: "MongoDB", icon: "../Technology/MongoDB.svg" },
+      { name: "Redis", icon: "../Technology/Redis.svg" },
+    ],
   },
   {
-    category: "Tools & Platforms",
-    items: ["Docker", "Kubernetes", "AWS", "Git"],
+    category: "DevOps & Tools",
+    items: [
+      { name: "Docker", icon: "../Technology/Docker.svg" },
+      { name: "Kubernetes", icon: "../Technology/Kubernetes.svg" },
+      { name: "Jenkins", icon: "../Technology/Jenkins.svg" },
+      { name: "Puppet", icon: "../Technology/Puppet.svg" },
+      { name: "Ansible", icon: "../Technology/Ansible.svg" },
+      { name: "Terraform", icon: "../Technology/Terraform.svg" },
+      { name: "DataDog", icon: "../Technology/DataDog.svg" },
+      { name: "Prometheus", icon: "../Technology/Prometheus.svg" },
+      { name: "GitLab", icon: "../Technology/GitLab.svg" },
+      { name: "Jira", icon: "../Technology/Jira.svg" },
+      { name: "AWS", icon: "../Technology/AWS.svg" },
+      { name: "Git", icon: "../Technology/Git.svg" },
+    ],
   },
   {
     category: "Other",
-    items: ["REST APIs", "GraphQL", "Microservices", "CI/CD"],
+    items: [
+      { name: "REST APIs", icon: "../Technology/Api.svg" },
+      { name: "GraphQL", icon: "../Technology/GraphQL.svg" },
+      { name: "Microservices", icon: "../Technology/microservice.png" },
+      { name: "RabbitMQ", icon: "../Technology/RabbitMQ.svg" },
+      { name: "gRPC", icon: "../Technology/grpc.svg" },
+      { name: "Socket.io", icon: "../Technology/Socket.io.svg" },
+      { name: "SignalR", icon: "../Technology/NET.svg" },
+      { name: "CI/CD", icon: "../Technology/CI_CD.svg" },
+      { name: "Linux", icon: "../Technology/Linux.svg" },
+      { name: "Bash Script", icon: "../Technology/Bash.svg" },
+      { name: "tailwindcss", icon: "../Technology/Tailwind.svg" },
+      { name: "Bootstrap", icon: "../Technology/Bootstrap.svg" },
+      { name: "jQuery", icon: "../Technology/jQuery.svg" },
+    ],
   },
 ];
 
@@ -40,7 +89,12 @@ const Skills = () => {
                     className="text-gray-300 flex items-center"
                   >
                     <span className="w-2 h-2 bg-secondary rounded-full mr-2"></span>
-                    {skill}
+                    {skill.name}
+                    <img
+                      src={skill.icon}
+                      alt={skill.name}
+                      className="w-6 h-6 ml-2"
+                    />
                   </li>
                 ))}
               </ul>
