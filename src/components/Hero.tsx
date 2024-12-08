@@ -1,4 +1,23 @@
+import { useEffect, useState } from 'react';
 const Hero = () => {
+  const [borderColor, setBorderColor] = useState('');
+
+  useEffect(() => {
+    const randomColor = () => {
+      const letters = '0123456789ABCDEF';
+      let color = '#';
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    };
+
+    const intervalId = setInterval(() => {
+      setBorderColor(randomColor());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
   return (
     <section id="about" className="pt-24 pb-16 bg-primary/80 backdrop-blur-sm">
       <div className="container mx-auto px-6">
@@ -34,16 +53,17 @@ const Hero = () => {
               Resume
             </a>
             </div>
-          <div className="flex-1 animate-slide-in">
-            <div className="relative w-64 h-64 mx-auto md:w-80 md:h-80">
-              <img
-                src="../me.png"
-                alt="Profile"
-                className="rounded-full w-full h-full object-cover border-4 border-secondary shadow-xl"
-              />
-              <div  className="relative flex flex-col items-center justify-between py-4 lg:py-12"></div>
-            </div>
-          </div>
+            <div className="flex-1 animate-slide-in">
+      <div className="relative w-64 h-64 mx-auto md:w-80 md:h-80">
+        <img
+          src="../me.png"
+          alt="Profile"
+          className="rounded-full w-full h-full object-cover border-4 shadow-xl transition-colors duration-400"
+          style={{ borderColor: borderColor, borderWidth: '6px', transition: 'border-color 0.5s', }}
+        />
+        <div className="relative flex flex-col items-center justify-between py-4 lg:py-12"></div>
+      </div>
+    </div>
         </div>
       </div>
     </section>
