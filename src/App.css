@@ -40,3 +40,83 @@
 .read-the-docs {
   color: #888;
 }
+
+header {
+  background-color: var(--primary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+nav .social-icons a {
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+nav .social-icons a:last-child {
+  margin-right: 0;
+}
+
+nav .social-icons a:hover {
+  color: var(--secondary-color);
+}
+
+/* Desktop styles (default) */
+@media (min-width: 1024px) {
+  .social-icons {
+    display: flex;
+  }
+
+  .mobile-menu-button {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .social-icons {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+
+/* Phone styles */
+@media (max-width: 767px) {
+  .social-icons {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+}

@@ -34,64 +34,65 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-primary z-50">
-      <nav className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-4">
-            <a href="#" className="text-xl font-bold text-white">
-              Mohamed Gomaa
-            </a>
-            <div className="flex items-center space-x-4">
-              {socialItems.map((item) => (
-                <a key={item.href} href={item.href}>
-                  {item.icon}
-                </a>
-              ))}
-            </div>
-          </div>
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-white hover:text-secondary transition-colors"
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-          <div className="md:hidden flex items-center space-x-4">
-            <button
-              className="text-white"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden py-4">
+    <nav className="container mx-auto px-6 py-4">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center space-x-4">
+          <a href="#" className="text-xl font-bold text-white">
+            Mohamed Gomaa
+          </a>
+          <div className="social-icons flex items-center space-x-4">
             {socialItems.map((item) => (
               <a key={item.href} href={item.href}>
                 {item.icon}
               </a>
             ))}
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="block py-2 text-white hover:text-secondary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
           </div>
-        )}
-      </nav>
-    </header>
+        </div>
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-8">
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-white hover:text-secondary transition-colors"
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center space-x-4">
+          <button
+            className="mobile-menu-button text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="mobile-menu md:hidden py-4">
+          {socialItems.map((item) => (
+            <a key={item.href} href={item.href}>
+              {item.icon}
+            </a>
+          ))}
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="block py-2 text-white hover:text-secondary transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+      )}
+    </nav>
+  </header>
   );
 };
 
