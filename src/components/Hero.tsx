@@ -7,7 +7,7 @@ const Hero = () => {
     const randomColor = () => {
       const letters = '0123456789ABCDEF';
       let color = '#';
-      for (let i = 0; i < 6; i++) {
+      for (let i = 0; i < 8; i++) {
         color += letters[Math.floor(Math.random() * 16)];
       }
       return color;
@@ -15,7 +15,7 @@ const Hero = () => {
 
     const intervalId = setInterval(() => {
       setBorderColor(randomColor());
-    }, 1000);
+    }, 2000);
 
     return () => clearInterval(intervalId);
   }, []);
@@ -63,7 +63,12 @@ const Hero = () => {
           src="../me.png"
           alt="Profile"
           className="rounded-full w-full h-full object-cover border-4 shadow-xl transition-colors duration-400"
-          style={{ borderColor: borderColor, borderWidth: '6px', transition: 'border-color 0.5s', }}
+          style={{ 
+        borderColor: borderColor, 
+        borderWidth: '8px', 
+        transition: 'border-color 0.5s',
+        filter: 'drop-shadow(0 0 8px ' + borderColor + ')'
+          }}
         />
         <div className="relative flex flex-col items-center justify-between py-4 lg:py-12"></div>
       </div>
