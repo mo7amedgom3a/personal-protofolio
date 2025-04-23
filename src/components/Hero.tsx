@@ -65,7 +65,7 @@ const Hero = () => {
           className="rounded-full w-full h-full object-cover border-4 shadow-xl transition-colors duration-400"
           style={{ 
         borderColor: borderColor, 
-        borderWidth: '8px', 
+        borderWidth: '8px',  
         transition: 'border-color 0.5s',
         filter: 'drop-shadow(0 0 8px ' + borderColor + ')'
           }}
