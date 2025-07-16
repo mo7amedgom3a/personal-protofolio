@@ -36,7 +36,7 @@ const Hero = () => {
             <p className="text-lg text-gray-300 mb-8 leading-relaxed">
                 <span className="font-semibold text-white">
                 <span className="text-accent text-2xl animate-bounce ">H</span>ello!
-                </span>I’m <span className="text-accent font-serif italic">Mohamed Gomaa</span>, and I welcome you to my profile. <span className="wave">👋</span> 
+                </span>I’m <span className="text-accent font-serif italic">Mohamed Gomaa</span>, and I welcome you to my profile. 
               I am a <span className="font-semibold text-secondary">software engineer</span> specializing in <span className="text-secondary">backend development</span>, with a strong focus on building scalable and efficient applications. 
               I enjoy working with <span className="font-semibold text-secondary">DevOps tools</span> and <span className="font-semibold text-secondary">cloud technologies</span> to enhance deployment and manage infrastructure effectively. 
               In addition to my backend expertise, I have a passion for <span className="font-semibold text-secondary">front-end development</span>, allowing me to create full-stack solutions that improve user experiences. 
@@ -50,7 +50,7 @@ const Hero = () => {
               Get in Touch
             </a>
             <a
-              href="https://drive.google.com/file/d/1N0-q80QoOBuXVE1SJGv_TnNpkAYOAEML/view?usp=sharing"
+              href="https://drive.google.com/file/d/1RPpRWVYUynt1zs2OLiwT4y-VOlYV8Djg/view?usp=sharing"
               target="_blank"
               className="inline-block bg-secondary text-primary font-semibold px-6 py-3 rounded-lg hover:bg-accent transition-colors ml-4"
             >

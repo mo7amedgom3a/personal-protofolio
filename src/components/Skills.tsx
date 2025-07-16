@@ -40,7 +40,6 @@ const skills = [
       { name: "Terraform", icon: "../Technology/Terraform.svg" },
       { name: "DataDog", icon: "../Technology/DataDog.svg" },
       { name: "Prometheus", icon: "../Technology/Prometheus.svg" },
-      { name: "GitLab", icon: "../Technology/GitLab.svg" },
       { name: "Jira", icon: "../Technology/Jira.svg" },
       { name: "AWS", icon: "../Technology/AWS.svg" },
       { name: "Git", icon: "../Technology/Git.svg" },
@@ -62,7 +61,7 @@ const skills = [
       { name: "tailwindcss", icon: "../Technology/Tailwind.svg" },
       { name: "Bootstrap", icon: "../Technology/Bootstrap.svg" },
       { name: "jQuery", icon: "../Technology/jQuery.svg" },
-    ],
+          ],
   },
 ];
 

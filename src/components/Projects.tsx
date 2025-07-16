@@ -2,9 +2,16 @@ import { title } from "process";
 
 const projects = [
   {
+    title: "Easy-Deploy",
+    description: "A tool for automating deployment processes, making it easier to manage and deploy applications.",
+    image: "../easy-deploy.png", // Please add this image to public if not present
+    link: "https://github.com/mo7amedgom3a/Easy-Deploy",
+    technologies: ["FastAPI", "MongoDB", "GitHub Actions", "AWS", "Terraform", "AWS ECS", "AWS ECR", "AWS CodePipeline", "AWS EFS", "AWS CodeBuild", "AWS CodeDeploy", "Docker", "CI/CD", "DevOps", "Automation"],
+  },
+  {
     title: "Programmer's Social Hub",
     description: "a social media microservices platform designed for programmers to share their knowledge, tips, tricks, and code snippets.",
-    image: "https://res.cloudinary.com/upwork-fp/video/upload/c_scale,w_1000,q_auto/v1732047250/profile/portfolio/1744025927888236544/prqo2z0ttuqhaczvgsuy.mp4",
+    image: "https://github.com/mo7amedgom3a/Programmers-Social-Hub/raw/main/images/protofolio.jpg?raw=true",
     link: "https://github.com/mo7amedgom3a/Programmers-Social-Hub",
     technologies: [".NET", "MySQL", "Next.JS", "MongoDB", "TypeScript", "Docker", "Kubernetes", "RabbitMQ", "Redis", "Kong", "gRPC", "Jinkins", "SignalR"],
   },
@@ -18,7 +25,7 @@ const projects = [
   {
     title: "Hospital Management System",
     description: "Created a Hospital Management System enabling patients to schedule appointments, track progress, and view treatments.",
-    image: "../doctor.jpg",
+    image: "https://github.com/Adelkazzaz/Hospital_Management_System/blob/main/PhoneView.png?raw=true",
     link: "https://github.com/mo7amedgom3a/Hospital_Management_System",
     technologies: ["C#", ".NET", "Razor Pages", "MVC", "SQL Server", "JWT", "Ajax", "Jquery", "Bootstrap"]
   },
@@ -42,7 +49,8 @@ const projects = [
     image: "https://github.com/mo7amedgom3a/Genetic-Algorithm/raw/main/assets/Madrid_Brussels.gif?raw=true",
     link: "https://github.com/mo7amedgom3a/Genetic-Algorithm",
     technologies: ["Python", "Genetic Algorithm", "Ai", "Algorithms"]
-  }
+  },
+
 ];
 
 const Projects = () => {
@@ -62,24 +70,13 @@ const Projects = () => {
               }}
             >
                 <div className="relative overflow-hidden">
-                {project.image.endsWith('.mp4') ? (
-                  <video 
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-64 object-cover object-center"
-                  src={project.image}
-                  />
-                ) : (
                   <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-64 object-cover object-center"
                   />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="p-6 transform transition-transform duration-300 group-hover:translate-z-10">
                 <h3 className="text-xl font-semibold text-white mb-2">
                   {project.title}
