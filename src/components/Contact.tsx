@@ -14,11 +14,11 @@ const Contact = () => {
             </p>
             <div className="flex flex-col space-y-4">
               <a
-                href="mailto:mo7amed.gom3a.7moda@gmail.com"
+                href="mailto:mohamed.gomaa.dev2003@gmail.com"
                 className="flex items-center justify-center space-x-3 bg-secondary text-primary px-6 py-3 rounded-lg hover:bg-accent transition-colors"
               >
                 <Mail size={20} />
-                <span>mo7amed.gom3a.7moda@gmail.com</span>
+                <span>mohamed.gomaa.dev2003@gmail.com</span>
               </a>
               <div className="flex justify-center space-x-6">
                 <a

@@ -50,7 +50,7 @@ const Hero = () => {
               Get in Touch
             </a>
             <a
-              href="https://drive.google.com/file/d/1RPpRWVYUynt1zs2OLiwT4y-VOlYV8Djg/view?usp=sharing"
+              href="https://drive.google.com/file/d/1ViaD3RSIuN1LFrq7WJsKhDqN--hO2tnk/view?usp=sharing"
               target="_blank"
               className="inline-block bg-secondary text-primary font-semibold px-6 py-3 rounded-lg hover:bg-accent transition-colors ml-4"
             >
