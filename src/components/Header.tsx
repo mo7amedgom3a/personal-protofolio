@@ -7,6 +7,28 @@ import { faMedium } from "@fortawesome/free-brands-svg-icons";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Smooth scroll function with proper offset
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    
+    if (href.startsWith('#')) {
+      const targetElement = document.querySelector(href);
+      if (targetElement) {
+        const headerHeight = 80; // Adjust based on your header height
+        const elementPosition = targetElement.offsetTop;
+        const offsetPosition = elementPosition - headerHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+    
+    // Close mobile menu after clicking
+    setIsMenuOpen(false);
+  };
+
   const navItems = [
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
@@ -55,7 +77,8 @@ const Header = () => {
               <a
               key={item.name}
               href={item.href}
-              className="text-white hover:text-secondary transition-colors relative group"
+              onClick={(e) => handleSmoothScroll(e, item.href)}
+              className="text-white hover:text-secondary transition-colors relative group cursor-pointer"
               >
               {item.name}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 group-hover:w-full transition-all duration-300 ease-in-out"></span>
@@ -80,8 +103,8 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="block py-2 text-white hover:text-secondary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleSmoothScroll(e, item.href)}
+                className="block py-2 text-white hover:text-secondary transition-colors cursor-pointer"
               >
                 {item.name}
               </a>

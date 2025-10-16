@@ -2,6 +2,20 @@ import { title } from "process";
 
 const projects = [
   {
+    title: "Serverless E-Commerce Platform",
+    description: "A fully serverless, event-driven e-commerce application built on AWS with microservices architecture for products, users, orders, and cart management using AWS Step Functions for orchestration.",
+    image: "../serverless-ecommerce.png", // Please add this image to public folder
+    link: "https://github.com/mo7amedgom3a/Serverless-ECommerce-Platform", // Update with actual repo link
+    technologies: ["FastAPI", "AWS Lambda", "API Gateway", "Cognito", "RDS", "DynamoDB", "S3", "CloudFront", "SNS/SQS", "Step Functions", "Terraform", "Docker", "ECR", "GitHub Actions", "ElastiCache", "IAM"]
+  },
+  {
+    title: "Django Service Deployment",
+    description: "Enterprise-grade Django application deployment on AWS EC2 with complete infrastructure automation, containerization, and comprehensive monitoring solution achieving 99.95% uptime.",
+    image: "https://github.com/mo7amedgom3a/AWS-Associate-labs/raw/main/Week2/ec2-layer/images/web-app-django.png", // Please add this image to public folder
+    link: "https://github.com/mo7amedgom3a/AWS-Associate-labs/Week2/ec2-layer", // Update with actual repo link
+    technologies: ["Django", "AWS EC2", "Docker", "Gunicorn", "Nginx", "PostgreSQL", "Terraform", "GitHub Actions", "Ansible", "Prometheus", "Grafana", "CI/CD"]
+  },
+  {
     title: "Easy-Deploy",
     description: "A tool for automating deployment processes, making it easier to manage and deploy applications.",
     image: "../easy-deploy.png", // Please add this image to public if not present
